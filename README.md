@@ -106,3 +106,105 @@ InkWell(
 - Melakukan add-commit-push ke GitHub.
 
 </details>
+
+#### TUGAS 8
+
+<details>
+<summary>
+1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
+</summary>
+
+**1. Navigator.push()**
+
+Metode Navigator.push() digunakan untuk menambahkan rute baru ke tumpukan navigasi dalam aplikasi Flutter.
+Ini memungkinkan pengguna untuk kembali ke rute sebelumnya dengan tombol "Back". Cocok untuk menambahkan rute baru yang ingin Anda pertahankan dalam tumpukan navigasi.
+
+Contoh penggunaan Navigator.push():
+```
+// Navigasi ke halaman DetailA
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => DetailA()),
+);
+```
+
+**2. Navigator.pushReplacement()**
+
+Metode Navigator.pushReplacement() digunakan untuk menambahkan rute baru ke tumpukan navigasi dan menggantikan rute saat ini. Berguna ketika Anda ingin menggantikan rute saat ini dengan rute yang baru, seperti ketika tugas atau langkah tertentu selesai.
+
+Contoh penggunaan Navigator.pushReplacement():
+```
+// Mengganti rute saat ini dengan halaman DetailB
+Navigator.pushReplacement(
+  context,
+  MaterialPageRoute(builder: (context) => DetailB()),
+);
+```
+Dengan Navigator.pushReplacement(), rute saat ini dihapus dari tumpukan navigasi dan diganti dengan rute yang baru. Ini memungkinkan pengguna untuk menggantikan rute saat ini dengan rute yang lebih sesuai tanpa perlu kembali ke rute sebelumnya.
+
+</details>
+
+<details>
+<summary>
+2. Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
+</summary>
+
+**1. Container**
+Container adalah widget yang digunakan untuk mengelompokkan dan mengatur widget lain ke dalam kotak dengan properti tertentu. Pengembang dapat mengatur properti seperti margin, padding, warna latar belakang, dan lainnya. Container sering digunakan untuk mengatur tata letak sederhana dan sebagai wadah untuk widget lain.
+
+**2. Row dan Column**
+Row dan Column adalah widget yang digunakan untuk mengatur widget secara horizontal (dalam Row) atau vertikal (dalam Column). Mereka sering digunakan untuk mengatur tata letak berbasis baris dan kolom, seperti tata letak tabel atau daftar item.
+
+**3. ListView:**
+ListView adalah widget yang digunakan untuk membuat daftar gulir (scrollable list) dari widget. Berguna ketika pengembang memiliki daftar item yang lebih panjang daripada layar, dan pengguna perlu menggulir untuk melihat seluruh kontennya.
+
+**4. Stack**
+Stack adalah widget yang digunakan untuk menumpuk widget satu di atas yang lain. Pengembang dapat mengatur widget dalam tumpukan (stack) dengan memberikan properti posisi seperti atas, bawah, kiri, dan kanan. Berguna ketika pengembang ingin menempatkan widget secara bebas di atas satu sama lain.
+
+**5. Expanded**
+Expanded adalah widget yang digunakan untuk mengisi ruang yang tersedia dalam Row atau Column. Ini memungkinkan widget anak untuk mengisi sebanyak mungkin ruang yang tersedia, sehingga berguna dalam tata letak yang responsif.
+
+**6. Card**
+Card adalah widget yang digunakan untuk membuat kotak dengan bayangan dan sudut yang terlihat seperti kartu fisik. Berguna untuk pengembang dalam menampilkan konten terkait dalam bentuk kartu yang dapat dipisahkan dari konten lain.
+
+**7. Wrap**
+Wrap adalah widget yang digunakan untuk mengatur widget dalam baris dan kolom seperti Row atau Column, tetapi dapat memindahkan widget ke baris atau kolom berikutnya jika tidak cukup ruang. Berguna untuk pengembang dalam menangani konten yang dapat meluas ke samping tanpa memicu gulir.
+
+**8. GridView**
+GridView adalah widget yang digunakan untuk mengatur widget dalam grid dengan baris dan kolom. Pengembang dapat mengatur jumlah kolom, menggulir grid jika diperlukan, dan lainnya.
+
+**9. SingleChildScrollView**
+SingleChildScrollView adalah widget yang mengizinkan satu anak widget saja dan digunakan untuk membuat daftar gulir konten tunggal. Berguna ketika pengembang memiliki sedikit konten yang perlu digulir di layar.
+
+**10. Flow**
+Flow adalah widget yang digunakan untuk mengatur widget dalam aliran non-hirarkis, mirip dengan Wrap.
+Widget dalam Flow diatur berdasarkan kendali alur tertentu.
+
+</details>
+
+<details>
+<summary>
+3. Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
+</summary>
+
+
+
+</details>
+
+<details>
+<summary>
+4. Bagaimana penerapan clean architecture pada aplikasi Flutter?
+</summary>
+
+Clean Architecture memungkinkan aplikasi Flutter untuk menjadi lebih bersih, terstruktur dengan baik, dan mudah dikelola dengan mengisolasi komponen dan meminimalkan ketergantungan. Hal ini membuat aplikasi lebih skalabel dan mudah dipelihara seiring berjalannya waktu. Pada aplikasi Flutter, clean architecture melibatkan pemisahan aplikasi menjadi lapisan Presentasi, Bisnis, dan Data dengan prinsip Dependency Inversion. Ini memungkinkan pengelolaan dependensi, isolasi logika bisnis, pengujian unit yang efektif, serta fleksibilitas dalam mengganti tampilan atau sumber data. Prinsip SOLID juga digunakan untuk menjaga kode tetap terstruktur dengan baik dan mudah diubah.
+
+</details>
+
+<details>
+<summary>
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
+</summary>
+
+
+
+</details>
