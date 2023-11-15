@@ -187,7 +187,21 @@ Widget dalam Flow diatur berdasarkan kendali alur tertentu.
 3. Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
 </summary>
 
+1. Nama Produk (name):
+  Jenis Input = TextFormField
+  Saya menggunakan elemen input tersebut untuk memasukkan nama produk. Sebagai elemen dasar dari setiap item, nama produk penting untuk identifikasi dan deskripsi. TextFormField cocok untuk input teks seperti ini.
 
+2. Harga Produk (price):
+  Jenis Input = TextFormField dengan keyboardType diatur ke TextInputType.number
+  Saya menggunakan elemen input tersebut karena harga produk harus berupa angka, oleh karena itu, TextFormField dengan keyboard numerik digunakan untuk memastikan pengguna hanya memasukkan angka.
+
+3. Deskripsi Produk (description):
+  Jenis Input = TextFormField
+  Saya menggunakan elemen input tersebut untuk memberikan informasi lebih detail tentang produk. TextFormField digunakan untuk memungkinkan pengguna memasukkan teks bebas, yang dapat mencakup informasi detail atau catatan tambahan tentang produk.
+
+4. Jumlah Produk (amount):
+  Jenis Input = TextFormField dengan keyboardType diatur ke TextInputType.number
+  Saya menggunakan elemen input tersebut untuk mengindikasikan stok atau jumlah unit yang tersedia atau yang akan ditambahkan. Sama seperti harga, jumlah ini harus berupa angka sehingga input numerik digunakan untuk memudahkan penggunaan dan menghindari kesalahan input.
 
 </details>
 
@@ -205,6 +219,28 @@ Clean Architecture memungkinkan aplikasi Flutter untuk menjadi lebih bersih, ter
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
 </summary>
 
+- Membuat minimal satu halaman baru pada aplikasi, yaitu halaman formulir tambah item baru dengan beberapa ketentuan.
 
+Pertama, saya memulai dengan membuat file baru bernama shoplist_form.dart. Di sini, saya menggunakan StatefulWidget karena perlu mengupdate status berdasarkan input pengguna. Dalam build method, saya menambahkan Form dengan sebuah GlobalKey untuk mengelola status form.
+
+Di dalam form ini, saya menambahkan empat TextFormField untuk name, price, description, dan amount. Untuk setiap field ini, saya memastikan ada validasi yang memeriksa apakah field tersebut tidak kosong dan memenuhi kriteria tipe data yang sesuai, seperti angka untuk harga dan jumlah.
+
+Kemudian, saya menambahkan sebuah tombol 'Save'. Saya menggunakan ElevatedButton untuk ini. Dalam onPressed dari tombol ini, saya mengecek dulu apakah form valid menggunakan _formKey.currentState.validate(). Jika ya, saya simpan datanya ke list dan menampilkan pop-up menggunakan showDialog yang menampilkan informasi item yang baru disimpan.
+
+- Mengarahkan pengguna ke halaman form tambah item baru ketika menekan tombol Tambah Item pada halaman utama.
+
+Di MyHomePage, saya menambahkan sebuah widget yang, ketika ditekan, akan membawa pengguna ke ShopFormPage untuk menambah item baru. Saya menggunakan GridView untuk menampilkan opsi ini.
+
+- Memunculkan data sesuai isi dari formulir yang diisi dalam sebuah pop-up setelah menekan tombol Save pada halaman formulir tambah item baru.
+
+Pada form yang saya buat, saya menambahkan empat TextFormField untuk name, price, description, dan amount. Dan tidak lupa, saya memastikan bahwa setiap kali tombol 'Save' di ShopFormPage ditekan, item yang baru ditambahkan disimpan ke dalam listItem yang didefinisikan di item.dart.
+
+- Membuat sebuah drawer pada aplikasi dengan beberapa ketentuan.
+
+Selanjutnya, saya membuat file left_drawer.dart untuk widget Drawer. Saya menambahkan dua ListTile di dalam ListView di Drawer ini. Satu untuk navigasi ke 'Halaman Utama' dan satu lagi untuk 'Tambah Item'.
+
+Di setiap ListTile, saya menetapkan onTap untuk melakukan navigasi. Untuk 'Halaman Utama', saya gunakan Navigator.pushReplacement menuju MyHomePage, dan untuk 'Tambah Item', saya gunakan Navigator.push menuju ShopFormPage.
+
+Setelah itu, saya mengintegrasikan LeftDrawer ke dalam Scaffold dari MyHomePage dan ShopFormPage. Ini memungkinkan saya untuk memiliki drawer yang sama di kedua halaman tersebut dengan fungsionalitas navigasi yang sudah saya tetapkan.
 
 </details>

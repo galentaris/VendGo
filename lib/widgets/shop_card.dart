@@ -102,6 +102,7 @@ class CardItem extends StatelessWidget {
                       Text('Nama: ${item.name}'),
                       Text('Harga: ${item.price}'),
                       Text('Deskripsi: ${item.description}'),
+                      Text('Jumlah: ${item.amount}'),
                     ],
                   ),
                 ),
